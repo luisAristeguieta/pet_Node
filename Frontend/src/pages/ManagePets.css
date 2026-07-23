@@ -1,0 +1,252 @@
+/* ==========================================================================
+   ANULACIÓN AGRESIVA DE CONFIGURACIONES DE LOGIN HEREDADAS
+   ========================================================================== */
+
+/* Forzamos a los contenedores raíz globales a expandirse SI existe el panel de mascotas */
+body:has(.crud-container),
+#root:has(.crud-container) {
+    display: block !important;
+    width: 100% !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #0f172a !important; /* Mantiene un fondo oscuro elegante general */
+}
+
+/* Contenedor Principal del Dashboard */
+.crud-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.crud-container h1, 
+.crud-container h2 {
+    color: #ffffff !important;
+    text-align: left !important;
+    width: 100% !important;
+}
+
+.crud-container h1 {
+    font-size: 2.25rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Formulario de Registro Superior Horizontal */
+.creation-form {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    background-color: #f8fafc !important;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.creation-form h2 {
+    color: #334155 !important;
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.25rem;
+}
+
+.form-field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    flex: 1 !important;
+    min-width: 200px !important;
+}
+
+.form-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.form-field input[type="text"] {
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.btn-submit {
+    padding: 0.5rem 1.5rem !important;
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    height: 38px !important;
+}
+
+/* ==========================================================================
+   CUADRÍCULA DE TARJETAS (GRID) REPETIBLE Y RESPONSIVA
+   ========================================================================== */
+
+.pet-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Tarjeta Individual */
+.pet-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Contención estricta de la imagen descargada del Blob */
+.pet-card-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 200px !important;
+    min-height: 200px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.pet-card-img-placeholder {
+    width: 100% !important;
+    height: 200px !important;
+    background-color: #f1f5f9 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #94a3b8 !important;
+}
+
+/* Cuerpo de Contenidos de la Tarjeta */
+.pet-card-body {
+    padding: 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    flex-grow: 1 !important;
+    box-sizing: border-box !important;
+}
+
+.pet-card-body h3 {
+    margin: 0 !important;
+    color: #0f172a !important;
+    font-size: 1.25rem !important;
+    text-align: left !important;
+}
+
+.pet-card-body p {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 0.95rem !important;
+    text-align: left !important;
+}
+
+.pet-card-meta {
+    font-size: 0.75rem !important;
+    color: #94a3b8 !important;
+    font-style: italic !important;
+}
+
+/* Contenedor Horizontal para los Botones */
+.card-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.75rem !important;
+    margin-top: auto !important; /* Empuja los botones al fondo de la tarjeta */
+    padding-top: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.btn-edit {
+    flex: 1 !important;
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+
+.btn-terminate {
+    flex: 1 !important;
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+
+/* Formulario de Edición Interno */
+.inline-mutation-form {
+    padding: 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    box-sizing: border-box !important;
+}
+
+.mutation-field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+}
+
+.mutation-field input[type="text"] {
+    width: 100% !important;
+    padding: 0.4rem !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+}
+
+.btn-save {
+    flex: 1 !important;
+    background-color: #10b981 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+}
+
+.btn-cancel {
+    flex: 1 !important;
+    background-color: #64748b !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+}
